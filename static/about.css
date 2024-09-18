@@ -1,0 +1,165 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana;
+}
+body{
+	background-image: url(images/id\ background.png);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+	font-size: 1rem;
+}
+a:hover{
+	color: white;
+	transition: .2s;
+}
+header{
+	position: relative;
+	padding: 0 2rem;
+	background: rgb(212, 174, 3);
+}
+.nav-bar{
+	width: 100%;
+	height: 60px;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.nav-bar .logo a{
+	font-size: 2rem;
+	font-weight: bold;
+}
+.nav-bar .links{
+	display: flex;
+	gap: 2rem;
+}
+.nav-bar img{
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	display: none;
+}
+/** Drop Menu **/
+.drop-menu{
+	position: absolute;
+	right: 2rem;
+	top: 60px;
+	width: 250px;
+	background: black;
+	box-shadow: 1px 1px 20px wheat;
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+	height: 0;
+	transition: height 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.drop-menu li{
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.drop-menu a{
+	color: wheat;
+}
+.drop-menu a:hover{
+	color: white;
+	background: rgba(128, 128, 128, 0.253);
+	width: 100%;
+	border-radius: 10px;
+	text-align: center;
+}
+.drop-menu.open{
+	height: auto;
+}
+.about{
+	color: black;
+	background-color: rgb(212, 174, 3);
+	align-items: center;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 2px solid wheat;
+	padding: 10px;
+	border-radius: 20px;
+}
+.about h1{
+	font-family:'Times New Roman';
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+.about p{
+	font-family: monospace;
+	letter-spacing: 2.cap;
+}
+
+
+
+/** MEDIA **/
+@media(max-width: 992px){
+	.nav-bar .links{
+		display: none;
+	}
+	.nav-bar img{
+		display: block;
+	}
+	.drop-menu{
+		display: block;
+	}
+	.about h1{
+		font-family:'Times New Roman';
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.about p{
+		color: rgb(212, 174, 3);
+		font-family: monospace;
+		font-size: small;
+	}
+}
+
+
+@media(max-width: 500px){
+	.drop-menu{
+		left: 2rem;
+		width: unset;
+	}
+	.about{
+		color: black;
+		background-color: rgb(212, 174, 3);
+		border: 2px solid wheat;
+		padding: 10px;
+		border-radius: 20px;
+		align-items: center;
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.about h1{
+		font-family:'Times New Roman';
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.about p{
+		color: rgb(212, 174, 3);
+		font-family: monospace;
+		font-size: small;
+	}
+	
+}

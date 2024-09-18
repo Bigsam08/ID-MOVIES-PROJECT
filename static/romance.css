@@ -1,0 +1,270 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana;
+}
+body{
+	background-image: url(images/id\ background.png);
+	background-position: center;
+	background-size: cover;
+	height: auto;
+	/* display: flex;
+	flex-direction: column; */
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+	font-size: 1rem;
+	font-weight: bold;
+}
+a:hover{
+	color: white;
+	transition: .2s;
+}
+header{
+	position: relative;
+	padding: 0 2rem;
+	background: rgb(226, 188, 17);
+}
+.nav-bar{
+	width: 100%;
+	height: 60px;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.nav-bar .logo a{
+	font-size: 2rem;
+	font-weight: bold;
+}
+.nav-bar .links{
+	display: flex;
+	gap: 2rem;
+}
+.nav-bar img{
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	display: none;
+}
+.links li {
+	border: 2px solid black;
+	padding: 8px;
+	border-radius: 10px;
+	font-weight: lighter;
+	cursor: pointer;
+}
+.links li a{
+	font-family: 'Gill Sans';
+}
+.links li:hover{
+	background: black;
+	color: red;
+	transition: 1s ease-out;
+}
+.links li:hover a{
+	color: rgb(224, 186, 13);
+}
+/** Drop Menu **/
+.drop-menu{
+	position: absolute;
+	right: 2rem;
+	top: 60px;
+	width: 250px;
+	background: rgba(0, 0, 0, 0.726);
+	box-shadow: 1px 1px 10px lightgray;
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+	height: 0;
+	transition: height 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.drop-menu a{
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: wheat;
+	font-size: 9px;
+}
+
+.drop-menu a:hover{
+	color: white;
+	background: rgba(128, 128, 128, 0.253);
+	width: 100%;
+	border-radius: 10px;
+	text-align: center;
+	text-decoration: underline;
+}
+.drop-menu.open{
+	height: 80px;
+}
+.movies-container{
+	height: auto;
+}
+.category{
+	color: rgb(224, 186, 13);
+	font-weight: bolder;
+	font-size: 25px;
+	font-family: Verdana;
+	padding: 10px;
+	margin-left: 20px;
+}
+.movie {
+	display: flex;
+	/* flex-direction: row; */
+	align-items: center;
+	margin: 20px;
+	border: 2px solid rgba(226, 188, 17, 0.226);
+	padding: 10px;
+	height: 300px;
+	width: auto;
+	
+}
+.movie img {
+	width: 250px;
+	height: 100%;
+	margin-right: 20px;
+	box-shadow: 0px 5px 10px black;
+	border-radius: 5px;
+
+}
+.info{
+	text-wrap: wrap;
+	width: 80%;
+	box-sizing: border-box;
+	overflow: hidden;
+	height: 100%;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+
+.info h2 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	color: goldenrod;
+	font-weight: bolder;
+}
+
+.info p {
+	font-size: 12px;
+	margin-bottom: 8px;
+	color: bisque;
+	font-weight: bolder;
+	width: 50%;
+}
+
+.vote{
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-bottom: 8px;
+}
+.vote:hover{
+	background-color: #3e8e41;
+}
+
+#movie1-bar, #movie2-bar, #movie3-bar{
+	background-color: lightgray;
+	border-radius: 5px;
+	height: 10px;
+	position: relative;
+	width: 20%;
+	height: 5px;
+
+}
+#movie-1Progress, #movie-2Progress, #movie-3Progress{
+	background-color: green;
+	border-radius: 5px;
+	height: 100%;
+	width: 0%;
+}
+
+.about{
+	color: white;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: grid;
+	margin: 20px;
+	padding: 15px;
+	position: relative;
+	bottom: 0;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.411);
+	border-radius: 10px;
+	font-family: monospace;
+}
+
+
+
+@media(max-width: 640px){
+	.drop-menu{
+		display: block;	
+	}
+	.info{
+		padding: 0;
+	}
+	
+	.info h2 {
+		font-size: 15px;
+		margin-bottom: 10px;
+		color: goldenrod;
+		font-weight: bolder;
+		margin-top: 15px;
+	}
+	
+	.info p {
+		font-size: 5px;
+		color: bisque; 
+		width: 100%;
+		padding: 5px;
+	}
+	.vote{
+		padding: 5px;
+		font-size: 10px;
+		border-radius: 3px;
+	}
+	.about{
+		padding: 5px;
+		font-size: 10px;
+	}
+	.movie{
+		height: 200px;
+	}
+	.movie img{
+		height: 95%;
+		width: 120px;
+	}
+	#movie1-bar, #movie2-bar, #movie3-bar{
+		width: 50%;
+	}
+	.category{
+		font-size: 15px;
+		margin-top: 2px;
+	}
+	.nav-bar .links{
+		display: none;
+	}
+	.nav-bar img{
+		display: block;
+	}
+	.drop-menu{
+		display: block;
+		width: 50%;
+	}
+	.logo a{
+		font-size: 10px;
+	}
+
+}

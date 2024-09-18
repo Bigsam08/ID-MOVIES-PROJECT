@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="static/home.css">
+		<title> Home </title>
+	</head>
+	<body>
+		<header>
+			<div class="nav-bar">
+				<div class="logo"><a href="#"> ID MOVIES</a> </div>
+				
+				<form class="search">
+					<input type="search"  id="search" placeholder="search movies">
+					<button class="sb" type="submit"> search </button>
+				</form>
+				<div class="log-out">
+					<a href="{{ url_for('login') }}"> log out</a>
+				</div>
+
+				<div class="menu">
+					<img src="static/images/menu.png" alt="">
+				</div>
+			</div>
+			<!-- drop down log out button-->
+			<div class="drop-menu">
+				<a href="{{ url_for('login') }}"> log-out</a>
+			</div>
+		</header>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<p id="flash-msg"> {{ msg }} </p>
+					<script>
+						setTimeout(function() {
+							document.getElementById("flash-msg").remove();
+						}, 10000);
+					</script>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		<!-- body tag movies display -->
+		<div class="topic"> <h2> Watching </h2> </div>
+		<div class="watching-box">
+			<img src="static/images/apoca.jpg" alt="">
+			
+		</div>
+
+		<br><hr>
+		<div class="msg"> <h2> Rating Category </h2> </div>
+		<div class="rating">
+			<div class="cards">
+				<a href="{{ url_for('romance') }}"> <img src="static/images/lagramas.jpeg" alt=""></a>
+				<h2> ROMANCE </h2>
+			</div>
+			<div class="cards">
+				<a href=""> <img src="static/images/sentinelle.jpg" alt=""> </a>
+				<h2> ACTION </h2>
+			</div>
+			<div class="cards">
+				<a href=""> <img src="static/images/maaya.jpeg" alt=""></a>
+				<h2> HORROR </h2>
+			</div>
+			<div class="cards">
+				<a href=""> <img src="static/images/dinner.jpg" alt=""> </a>
+				<h2> NAIJA </h2>
+			</div>
+			<div class="cards">
+				<a href=""> <img src="static/images/spy.jpg" alt=""> </a>
+				<h2> COMEDY </h2>
+			</div>
+		</div>
+
+		<br><hr>
+		<div class="msg"> <h2> Trending Movies</h2> </div>
+		<section class="trending">
+			<div class="trending-movies">
+				<a href=""> <img src="static/images/supercel.jpeg" alt=""></a>
+			</div>
+			<div class="trending-movies">
+				<a href=""> <img src="static/images/power.jpg" alt=""> </a>
+			</div>
+			<div class="trending-movies">
+				<a href=""> <img src="static/images/underbridge.jpg" alt=""></a>
+			</div>
+			<div class="trending-movies">
+				<a href=""> <img src="static/images/flymetomoon.jpeg" alt=""> </a>
+			</div>
+			<div class="trending-movies">
+				<a href=""> <img src="static/images/wrathofman.jpg" alt=""> </a>
+			</div>
+		</section><br><hr>
+		<div class="msg"> <h2> New Release </h2> </div>
+		<section class="release">
+			<div class="release-movies">
+				<a href=""> <img src="static/images/fire.jpg" alt=""></a>
+			</div>
+			<div class="release-movies">
+				<a href=""> <img src="static/images/loveliesbleeding.jpeg" alt=""> </a>
+			</div>
+			<div class="release-movies">
+				<a href=""> <img src="static/images/scent.jpeg" alt=""></a>
+			</div>
+			<div class="release-movies">
+				<a href=""> <img src="static/images/raone.jpg" alt=""> </a>
+			</div>
+			<div class="release-movies">
+				<a href=""> <img src="static/images/apoca.jpg" alt=""> </a>
+			</div>
+		</section>
+		<br><hr>
+		<div class="about">
+			<h1> ABOUT </h1>
+			<p> This is the home of the best online movie updates where users gets to rate their best movies, saving you the stress of wasting time on movies not worth it.</p>
+			<p> Get trending movies from all major industries as we keep updating the site time to time. </p>
+			<p> Current version 1.0. </p>
+		</div>
+		<!-- Drop down menu script-->
+		<script>
+			const menuicon = document.querySelector('.menu');
+			const dropdowmenu = document.querySelector('.drop-menu');
+
+			menuicon.addEventListener(
+				'click', () => {
+					dropdowmenu.classList.toggle('show');
+				});
+		</script>
+	</body>
+</html>

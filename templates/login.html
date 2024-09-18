@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/static/login.css">
+		<title> Welcome to ID Movies </title>
+	</head>
+	<body>
+		<header>
+			<div class="nav-bar">
+				<div class="logo"><a href="#"> ID MOVIES</a> </div>
+				<ul class="links">
+					<li><a href="{{ url_for('login') }}"> Sign in</a></li>
+					<li> <a href="{{ url_for('register') }}"> Create account</a></li>
+					<li> <a href="{{ url_for('about') }}"> About </a></li>
+				</ul>
+				<div class="menu">
+					<img src="/static/images/menu.png">
+				</div>
+			</div>
+			<div class="drop-menu">
+				<li><a href="{{ url_for('login') }}"> Sign in</a></li>
+				<li> <a href="{{ url_for('register') }}"> Create account</a></li>
+				<li> <a href="{{ url_for('about') }}"> About</a></li>
+			</div>
+		</header>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, msg in messages %}
+					<p class="alert alert-{{ category }}"> {{ msg }} </p>
+					<script>
+						setTimeout(function() {
+							document.getElementById("flash-msg").remove();
+						}, 10000);
+					</script>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		<section class="center-box">
+			<div class="msg">
+				<h1> WELCOME</h1>
+				<p> to your home of Entertaiment.<br>Get the latest and most trending <br>rated movies from Nollywood, <br> Hollywood, Bollywood</p>
+			</div>
+			<div class="login">
+				<h2> Sign In </h2>
+				<form method="POST" action="/login" class="form" id="login-form">
+					<label for="logemail" class="elabel"> Email</label>
+					<input type="email" name="email" id="logemail" placeholder="example@gmail.com">
+					<label for="pass" class="passlabel"> Password</label>
+					<input type="password" name="password" id="logpass" placeholder="password" required>
+					<button class="loginbtn" type="submit"> Login </button>
+					<p>Don't have an account? <a href="{{ url_for('register') }}"> SignUp</a></p>
+				</form>
+			</div>
+		</section>
+		<div class="smaller">
+			<h1> WELCOME </h1>
+			<p> to your home of Entertaiment. Get the <br>latest and most trending rated movies from <br>Nollywood, Hollywood, Bollywood</p>
+		</div>
+
+
+		<script>
+			const menuicon = document.querySelector('.menu')
+			const dropdowmenu = document.querySelector('.drop-menu')
+
+			menuicon.onclick = function(){
+				dropdowmenu.classList.toggle('open')
+			}
+		</script>
+	</body>
+</html>

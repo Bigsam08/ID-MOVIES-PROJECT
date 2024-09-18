@@ -1,0 +1,303 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana;
+}
+body{
+	background-image: url(images/id\ background.png);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+	font-size: 1rem;
+	font-weight: bold;
+}
+a:hover{
+	color: white;
+	transition: .2s;
+}
+header{
+	position: relative;
+	padding: 0 2rem;
+	background: rgb(212, 174, 3);
+}
+.nav-bar{
+	width: 100%;
+	height: 60px;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.nav-bar .logo a{
+	font-size: 2rem;
+	font-weight: bold;
+}
+.nav-bar .links{
+	display: flex;
+	gap: 2rem;
+}
+.nav-bar img{
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	display: none;
+}
+/** Drop Menu **/
+.drop-menu{
+	position: absolute;
+	right: 2rem;
+	top: 60px;
+	width: 250px;
+	background: black;
+	box-shadow: 1px 1px 20px wheat;
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+	height: 0;
+	transition: height 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.drop-menu li{
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.drop-menu a{
+	color: wheat;
+}
+.drop-menu a:hover{
+	color: white;
+	background: rgba(128, 128, 128, 0.253);
+	width: 100%;
+	border-radius: 10px;
+	text-align: center;
+}
+.drop-menu.open{
+	height: auto;
+}
+.center-box{
+	background: black;
+	width: 80%;
+	min-height: 450px;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid ;
+	border-radius: 20px;
+	position: relative;
+	top: 50%;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-50%);
+	box-shadow: 1px 1px 30px rgba(195, 163, 20, 0.891);
+	border: 5px solid  rgb(212, 174, 3);
+}
+.center-box::after{
+	content: "";
+	display: block;
+	clear: both;
+	position: absolute;
+	top: 0;
+	right: 70%;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 450px 10px;
+	border-color: transparent transparent rgba(207, 177, 10, 0.301) transparent;
+}
+.msg{
+	float: left;
+	width: 30%;
+	padding: 20px;
+	color: wheat;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	margin-top: 10%;
+}
+.msg h1{
+	font-family:'Trebuchet MS';
+	font-size: 2rem;
+	color: #c2980d;
+	margin-top: 10%;
+}
+.msg p{
+	font-size: x-small;
+}
+.smaller{
+	display: none;
+}
+.signup{
+	float: right;
+	width: 70%;
+	padding: 20px;
+	margin: 0;
+}
+.signup h2{
+	font-family: 'Times New Roman';
+	color: wheat;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	margin-top: 0%;
+}
+.signup input{
+	width: 100%;
+	border-radius: 15px;
+	height: 2rem;
+	padding: 20px;
+	margin-bottom: 5px;
+	border: none;
+	background-color: rgb(226, 188, 17);
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.signup label{
+	color: wheat;
+	font-size: 0.8rem;
+	padding-left: 5px;
+}
+.form .loginbtn{
+	background-color: black;
+	color:  rgb(226, 188, 17);
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+	text-align: center;
+	width: 100%;
+	border-radius: 15px;
+	height: 2.5rem;
+	margin-top: 10px;
+}
+.form p{
+	color: wheat;
+	font-size: smaller;
+	margin-top: 15px;
+	text-align: center;
+}
+.form a{
+	color: aliceblue;
+	font-size: bold;
+	margin-top: 15px;
+}
+.form a:hover{
+	color: rgb(226, 188, 17);
+}
+.form .loginbtn:hover{
+	color: black;
+	background-color: wheat;
+}
+.alert-danger{
+	background-color: red;
+	color: white;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;
+	width: fit-content;
+	font-size: 10px;
+	display: grid;
+	justify-content: center; 
+}
+.alert-success{
+	background-color: green;
+	color: white;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;
+	width: fit-content;
+	font-size: 10px;
+	display: grid;
+	justify-content: center; 
+}
+
+
+
+/** MEDIA **/
+@media(max-width: 600px){
+	.nav-bar .links{
+		display: none;
+	}
+	.nav-bar img{
+		display: block;
+	}
+	.drop-menu{
+		display: block;
+	}
+}
+
+
+@media(max-width: 600px){
+	.drop-menu{
+		left: 2rem;
+		width: unset;
+	}
+	.center-box::after{
+		display: none;
+	}
+	.signup{
+		width: 100%;
+	}
+	.msg {
+		display: none;
+	}
+	.smaller{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		position: relative;
+		bottom: 18%;
+		font-size: small;
+		width: 100%;	
+		}
+		.smaller h1{
+			font-family: 'Times New Roman';
+			font-weight: bolder;
+			color: rgb(212, 174, 3);
+		}
+		.smaller p{
+			color: wheat;
+			font-family: Verdana;
+			font-size: x-small;
+		}
+	.signup input{
+		width: 100%;
+		border-radius: 15px;
+		height: 2rem;
+		padding: 15px;
+		margin-bottom: 15px;
+		border: none;
+		background-color: rgb(226, 188, 17);
+
+	}
+	.center-box{
+		width: 80%;
+		min-height: 350px;
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 20px;
+		border: none;
+		border-radius: 10px;
+		box-shadow: none;
+		position: relative;
+		top: 50%;
+		justify-content: center;
+		align-items: center;
+		transform: translateY(-50%);
+	}
+	.signup h2{
+		display: none;
+	}
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="static/registration.css">
+		<title> Registration </title>
+	</head>
+	<body>
+		<header>
+			<div class="nav-bar">
+				<div class="logo"><a href="#"> ID MOVIES</a> </div>
+				<ul class="links">
+					<li><a href="{{ url_for('login') }}"> Sign in</a></li>
+					<li> <a href="#"> Create account</a></li>
+					<li> <a href="{{ url_for('about') }}"> About </a></li>
+				</ul>
+				<div class="menu">
+					<img src="/static/images/menu.png">
+				</div>
+			</div>
+			<div class="drop-menu">
+				<li><a href="{{ url_for('login') }}"> Sign in</a></li>
+				<li> <a href="#"> Create account</a></li>
+				<li> <a href="{{ url_for('about') }}"> About</a></li>
+			</div>
+		</header>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, msg in messages %}
+					<p class="alert alert-{{ category }}"> {{ msg }} </p>
+					<script>
+						setTimeout(function() {
+							document.getElementById("flash-msg").remove();
+						}, 10000);
+					</script>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		<section class="center-box">
+			<div class="msg">
+				<h1> CREATE</h1>
+				<p> New user </p>
+			</div>
+			<div class="signup">
+				<h2> Create Account </h2>
+				<form class="form" method="POST" action="/register">
+					<label for="email" class="elabel"> Email</label>
+					<input type="email" name="email" id="logemail" placeholder="example@gmail.com">
+					<label for="name" class="addname"> Name</label>
+					<input type="name" name="name" id="addname" placeholder="Name">
+					<label for="password" class="passlabel"> Password</label>
+					<input type="password" name="password" id="pass" placeholder="password" required>
+					<label for="confirm_password" class="passlabel"> Confirm Password</label>
+					<input type="password" name="confirm_password" id="passconfirm" placeholder="password" required>
+					<button class="loginbtn" type="submit"> Create Account </button>
+					<p>have an account? <a href="/"> SignIn</a></p>
+				</form>
+			</div>
+		</section>
+		<div class="smaller">
+			<h1> CREATE New User</h1>
+
+		</div>
+
+
+		<script>
+			const menuicon = document.querySelector('.menu')
+			const dropdowmenu = document.querySelector('.drop-menu')
+
+			menuicon.onclick = function(){
+				dropdowmenu.classList.toggle('open')
+			}
+		</script>
+	</body>
+</html>

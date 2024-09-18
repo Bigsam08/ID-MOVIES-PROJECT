@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="static/about.css">
+		<title> About </title>
+	</head>
+	<body>
+		<header>
+			<div class="nav-bar">
+				<div class="logo"><a href="#"> ID MOVIES</a> </div>
+				<ul class="links">
+					<li><a href="{{ url_for('login') }}"> Sign in</a></li>
+					<li> <a href="{{ url_for('register') }}"> Create account</a></li>
+					<li> <a href="#"> About </a></li>
+				</ul>
+				<div class="menu">
+					<img src="static/images/menu.png">
+				</div>
+			</div>
+			<div class="drop-menu">
+				<li><a href="{{ url_for('login') }}"> Sign in</a></li>
+				<li> <a href="{{ url_for('register') }}"> Create account</a></li>
+				<li> <a href="{{ url_for('about') }}"> About</a></li>
+			</div>
+		</header>
+			<div class="about">
+				<h1> ABOUT </h1>
+				<p> This is the home of the best online movie updates where users gets to rate their best movies,<br>saving you the stress of wasting time on movies not worth it.</p>
+				<p> Get trending movies from all major industries as we keep updating the site time to time. </p>
+				<p> Current version 1.0. </p>
+			</div>
+
+		<script>
+			const menuicon = document.querySelector('.menu')
+			const dropdowmenu = document.querySelector('.drop-menu')
+
+			menuicon.onclick = function(){
+				dropdowmenu.classList.toggle('open')
+			}
+		</script>
+	</body>
+</html>
