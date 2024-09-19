@@ -65,11 +65,23 @@ header{
 }
 .links li:hover{
 	background: black;
-	color: red;
 	transition: 1s ease-out;
 }
 .links li:hover a{
 	color: rgb(224, 186, 13);
+}
+
+.logout-button{
+	border: 2px solid black;
+	padding: 15px;
+	border-radius: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	background: transparent;
+}
+.logout-button:hover{
+	background: black;
+	color: rgb(226, 188, 17)
 }
 /** Drop Menu **/
 .drop-menu{
@@ -188,6 +200,7 @@ header{
 	border-radius: 5px;
 	height: 100%;
 	width: 0%;
+	transition: width 0.5s ease;
 }
 
 .about{

@@ -82,16 +82,14 @@ header{
 .log-out{
 	flex-basis: 7%;
 	border: 2px solid black;
-	padding: 5px 2px;
+	/* padding: 5px 2px; */
 	text-align: center;
 	border-radius: 10px;
+	padding: 12px;
+	background-color: transparent;
 }
 
-.log-out a{
-	text-decoration: none;
-	color: black;
-	font-family: Verdana;
-}
+
 .log-out:hover, .log-out a:hover{
 	box-shadow: 2px 2px 15px black;
 	background: black;
